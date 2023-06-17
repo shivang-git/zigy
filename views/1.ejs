@@ -1,5 +1,6 @@
 <html>
 <head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.js"></script>
 <script>
 var socket = io.connect('http://localhost:3000');
@@ -9,38 +10,44 @@ function sendText(id) {
   socket.emit('text', {id: id, text: text, checked: checked});
 }
 </script>
+<style>
+#text1 ,#text2 ,#text3, #text4, #text5, #text6, #text7{
+  margin :10px;
+}
+
+</style>
 </head>
 <body>
 <h1>Input Text Fields</h1>
 <div id="textboxes">
   <div>
     <input type="text" id="text1" oninput="sendText('text1')" />
-    <input type="checkbox" id="text1-check" onchange="sendText('text1')" />
+    <input type="checkbox" class="form-check-input" id="text1-check" onchange="sendText('text1')" />
   </div>
   <div>
     <input type="text" id="text2" oninput="sendText('text2')" />
-    <input type="checkbox" id="text2-check" onchange="sendText('text2')" />
+    <input type="checkbox" class="form-check-input" id="text2-check" onchange="sendText('text2')" />
   </div>
   <div>
     <input type="text" id="text3" oninput="sendText('text3')" />
-    <input type="checkbox" id="text3-check" onchange="sendText('text3')" />
+    <input type="checkbox" class="form-check-input" id="text3-check" onchange="sendText('text3')" />
   </div>
   <div>
     <input type="text" id="text4" oninput="sendText('text4')" />
-    <input type="checkbox" id="text4-check" onchange="sendText('text4')" />
+    <input type="checkbox" class="form-check-input" id="text4-check" onchange="sendText('text4')" />
   </div>
   <div>
     <input type="text" id="text5" oninput="sendText('text5')" />
-    <input type="checkbox" id="text5-check" onchange="sendText('text5')" />
+    <input type="checkbox" class="form-check-input" id="text5-check" onchange="sendText('text5')" />
   </div>
   <div>
     <input type="text" id="text6" oninput="sendText('text6')" />
-    <input type="checkbox" id="text6-check" onchange="sendText('text6')" />
+    <input type="checkbox" class="form-check-input" id="text6-check" onchange="sendText('text6')" />
   </div>
   <div>
     <input type="text" id="text7" oninput="sendText('text7')" />
-    <input type="checkbox" id="text7-check" onchange="sendText('text7')" />
-  </div>
+    <input type="checkbox" class="form-check-input" id="text7-check" onchange="sendText('text7')" />
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -4,12 +4,12 @@
 <script>
 var socket = io.connect('http://localhost:3000');
 socket.on('text', function(data) {
-  var div = document.getElementById(data.id + "-div");
+  var h1 = document.getElementById(data.id + "-div");
   if (data.checked) {
-    div.style.display = "block";
-    div.innerHTML = data.id + ": " + data.text;
+    h1.style.display = "block";
+    h1.innerHTML = data.id + ": " + data.text;
   } else {
-    div.style.display = "none";
+    h1.style.display = "none";
   }
 });
 </script>
@@ -17,13 +17,13 @@ socket.on('text', function(data) {
 <body>
 <h1>Display Text Data</h1>
 <div id="data">
-  <div id="text1-div"></div>
-  <div id="text2-div"></div>
-  <div id="text3-div"></div>
-  <div id="text4-div"></div>
-  <div id="text5-div"></div>
-  <div id="text6-div"></div>
-  <div id="text7-div"></div>
+  <h1 id="text1-div"></h1>
+  <h1 id="text2-div"></h1>
+  <h1 id="text3-div"></h1>
+  <h1 id="text4-div"></h1>
+  <h1 id="text5-div"></h1>
+  <h1 id="text6-div"></h1>
+  <h1 id="text7-div"></h1>
 </div>
 </body>
 </html>
