@@ -1,0 +1,29 @@
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.js"></script>
+<script>
+var socket = io.connect('http://localhost:3000');
+socket.on('text', function(data) {
+  var div = document.getElementById(data.id + "-div");
+  if (data.checked) {
+    div.style.display = "block";
+    div.innerHTML = data.id + ": " + data.text;
+  } else {
+    div.style.display = "none";
+  }
+});
+</script>
+</head>
+<body>
+<h1>Display Text Data</h1>
+<div id="data">
+  <div id="text1-div"></div>
+  <div id="text2-div"></div>
+  <div id="text3-div"></div>
+  <div id="text4-div"></div>
+  <div id="text5-div"></div>
+  <div id="text6-div"></div>
+  <div id="text7-div"></div>
+</div>
+</body>
+</html>

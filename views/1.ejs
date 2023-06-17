@@ -1,0 +1,46 @@
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.js"></script>
+<script>
+var socket = io.connect('http://localhost:3000');
+function sendText(id) {
+  var text = document.getElementById(id).value;
+  var checked = document.getElementById(id + "-check").checked;
+  socket.emit('text', {id: id, text: text, checked: checked});
+}
+</script>
+</head>
+<body>
+<h1>Input Text Fields</h1>
+<div id="textboxes">
+  <div>
+    <input type="text" id="text1" oninput="sendText('text1')" />
+    <input type="checkbox" id="text1-check" onchange="sendText('text1')" />
+  </div>
+  <div>
+    <input type="text" id="text2" oninput="sendText('text2')" />
+    <input type="checkbox" id="text2-check" onchange="sendText('text2')" />
+  </div>
+  <div>
+    <input type="text" id="text3" oninput="sendText('text3')" />
+    <input type="checkbox" id="text3-check" onchange="sendText('text3')" />
+  </div>
+  <div>
+    <input type="text" id="text4" oninput="sendText('text4')" />
+    <input type="checkbox" id="text4-check" onchange="sendText('text4')" />
+  </div>
+  <div>
+    <input type="text" id="text5" oninput="sendText('text5')" />
+    <input type="checkbox" id="text5-check" onchange="sendText('text5')" />
+  </div>
+  <div>
+    <input type="text" id="text6" oninput="sendText('text6')" />
+    <input type="checkbox" id="text6-check" onchange="sendText('text6')" />
+  </div>
+  <div>
+    <input type="text" id="text7" oninput="sendText('text7')" />
+    <input type="checkbox" id="text7-check" onchange="sendText('text7')" />
+  </div>
+</div>
+</body>
+</html>
